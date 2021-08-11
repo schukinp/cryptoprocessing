@@ -39,7 +39,7 @@ class TestAPI:
         assert data["is_valid"]
 
     def test_invalid_address(self):
-        url = base_url + f"validate/btc/{valid_address}"
+        url = base_url + f"validate/btc/{invalid_address}"
         response = requests.get(url=url)
         data = response.json()["data"]
         assert not data["is_valid"]
